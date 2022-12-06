@@ -39,4 +39,74 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
   },
 };
 
-console.log('project wired!')
+// console.log('project wired!')
+
+
+// const queryNav = document.querySelector(".container");
+// const queryCta = document.querySelector(".cta");
+// const queryMain = document.querySelector(".main-content");
+// const queryContact = document.querySelector(".contact");
+// const queryFooter = document.querySelector(".footer");
+// const queryImages = document.querySelector(".images");
+
+
+// Images
+
+const logoImg = document.querySelector("#logo-img");
+logoImg.src = siteContent.images["logo-img"];
+// console.log(logoImg);
+
+const ctaImg = document.querySelector("#cta-img");
+ctaImg.src = siteContent.images["cta-img"];
+
+const midImg = document.querySelector("#middle-img");
+midImg.src = siteContent.images["accent-img"];
+
+
+// Footer link
+
+const footerLink = document.querySelector("footer a");
+footerLink.textContent = siteContent.footer.copyright;
+footerLink.classList.add("bold");
+
+// Contact Info
+const contact = document.querySelector("section.contact")
+contact.querySelector('h4').textContent = siteContent.contact['contact-h4']
+contact.children[1].textContent = siteContent.contact['address']
+contact.children[2].textContent = siteContent.contact['phone']
+contact.children[3].textContent = siteContent.contact['email']
+
+// Top content
+const topContent = document.querySelector('.top-content')
+topContent.children[0].children[0].textContent = siteContent['main-content']['features-h4']
+topContent.children[0].children[1].textContent = siteContent['main-content']['features-content']
+topContent.children[1].children[0].textContent = siteContent['main-content']['about-h4']
+topContent.children[1].children[1].textContent = siteContent['main-content']['about-content']
+
+
+
+// Bottom content
+const bottomContent = document.querySelector('.bottom-content')
+const h4sBottom = bottomContent.querySelectorAll('h4')
+h4sBottom[0].textContent = siteContent['main-content']['services-h4']
+h4sBottom[1].textContent = siteContent['main-content']['product-h4']
+h4sBottom[2].textContent = siteContent['main-content']['vision-h4']
+const psBottom = bottomContent.querySelectorAll('p')
+psBottom[0].textContent = siteContent['main-content']['services-content']
+psBottom[1].textContent = siteContent['main-content']['product-content']
+psBottom[2].textContent = siteContent['main-content']['vision-content']
+
+// CTA
+document.querySelector('.cta .cta-text h1').textContent = siteContent.cta.h1
+document.querySelector('.cta .cta-text button').textContent = siteContent.cta.button
+
+// Nav links
+const navLinks = document.querySelectorAll('nav a')
+const navLinkTexts = Object.values(siteContent.nav)
+navLinks.forEach((link, idx) => {
+  link.textContent = navLinkTexts[idx]
+  link.classList.add('italic')
+})
+
+
+
